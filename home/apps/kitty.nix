@@ -1,15 +1,15 @@
-{ pkgs, ... }:
-
 {
   programs.kitty = {
     enable = true;
-    package = pkgs.kitty;
     settings = {
       font_family = "Ubuntu Nerd Font";
-      font_size = 12;
+      font_size = 10;
       confirm_os_window_close = 0;
     };
     extraConfig = ''
+      background #111216
+      foreground #f8f8f2
+
       # The 16 terminal colors
 
       # black
@@ -21,30 +21,28 @@
       color9 #f38ba8
 
       # green
-      color2  #a6e3a1
+      color2 #a6e3a1
       color10 #a6e3a1
 
       # yellow
-      color3  #f9e2af
+      color3 #f9e2af
       color11 #f9e2af
 
       # blue
-      color4  #89b4fa
+      color4 #89b4fa
       color12 #89b4fa
 
       # magenta
-      color5  #f5c2e7
+      color5 #f5c2e7
       color13 #f5c2e7
 
       # cyan
-      color6  #94e2d5
+      color6 #94e2d5
       color14 #94e2d5
 
       # white
-      color7  #bac2de
+      color7 #bac2de
       color15 #a6adc8
-
-
     '';
   };
 }
