@@ -10,7 +10,7 @@
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
     ./system/fish.nix
-    ./apps/nixvim.nix
+    ./apps/nixvim/nixvim.nix
   ];
 
     home.stateVersion = "25.11";
