@@ -1,15 +1,11 @@
-{ config, pkgs, ...}: let
-  inherit
-    (import ./variables.nix)
-    browser
-    terminal
-    ;
-in {
+{ config, pkgs, ... }:
+
+{
 
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$modifier,Return,exec,${terminal}"
-      "$modifier,B,exec,${terminal}"
+      "$modifier,Return,exec,kitty"
+      "$modifier,B,exec,firefox"
       "$modifier,D,discord"
       "$modifier,M,youtube-music"
       "$modifier,TAB,layoutmsg, swapwithmaster"

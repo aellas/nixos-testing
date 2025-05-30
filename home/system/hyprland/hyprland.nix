@@ -1,8 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}
+{ config, pkgs, ... }:
+
 {
   home.packages = with pkgs; [
     swww
@@ -16,6 +13,7 @@
     hyprland-qt-support
     hyprland-protocols
   ];
+
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"
   ];
@@ -28,18 +26,17 @@
       enableXdgAutostart = true;
       variables = ["--all"];
     };
-    xwayland = {
-      enable = true;
-    };
+    xwayland.enable = true;
+
     plugins = [
-      # Hyprtrails won't build :( 5/19/25
       pkgs.hyprlandPlugins.hyprtrails
       pkgs.hyprlandPlugins.hyprexpo
       pkgs.hyprlandPlugins.hyprspace
     ];
+
     settings = {
       input = {
-        kb_layout = "${keyboardLayout}";
+        kb_layout = "us";
         kb_options = [
           "grp:alt_caps_toggle"
           "caps:super"
@@ -74,8 +71,8 @@
         gaps_out = 8;
         border_size = 2;
         resize_on_border = true;
-        "col.active_border" = 0xee050607;
-        "col.inactive_border" = 0xFF3C3C40;
+        "col.active_border" = "0xee050607";
+        "col.inactive_border" = "0xFF3C3C40";
       };
 
       misc = {
@@ -96,7 +93,6 @@
 
       dwindle = {
         pseudotile = true;
-        #always split to right or bottom
         force_split = 2;
         preserve_split = true;
       };
@@ -120,14 +116,14 @@
 
       cursor = {
         sync_gsettings_theme = true;
-        no_hardware_cursors = 1; # change to 1 if want to disable
+        no_hardware_cursors = 1;
         enable_hyprcursor = false;
         warp_on_change_workspace = 2;
         no_warps = true;
       };
 
       render = {
-        explicit_sync = 0; # Change to 1 to disable
+        explicit_sync = 0;
         explicit_sync_kms = 1;
         direct_scanout = 0;
       };
@@ -138,71 +134,66 @@
         mfact = 0.5;
       };
 
-      ####### Disable nagware ####
-
       ecosystem = {
         no_donation_nag = true;
         no_update_news = false;
       };
     };
 
-    extraConfig = "
+    extraConfig = ''
       monitor=,preferred,auto,auto
       #source = ~/.config/hypr/monitors.conf
       #source = ~/.config/hypr/workspaces.conf
 
-       plugin {
-                hyprtrails {
-                color = rgba(33ccff80)
-                }
-              }
-              plugin {
-                  hyprexpo {
-                    columns = 3
-                    gap_size = 5
-                     bg_col = rgb(111111)
-                workspace_method = center current
-                     # [center/first] [workspace] e.g. first 1 or center m +1
-                     enable_gesture = true # laptop touchpad, 4 fingers
-                     gesture_distance = 300
-                     gesture_positive = true # positive = swipe down. Negative = swipe up.
-                  }
-                }
-                bind = ALT, space, hyprexpo:expo, toggle # can be: toggle, off/disable or on/enabe
+      plugin {
+        hyprtrails {
+          color = rgba(33ccff80)
+        }
+      }
+      plugin {
+        hyprexpo {
+          columns = 3
+          gap_size = 5
+          bg_col = rgb(111111)
+          workspace_method = center current
+          enable_gesture = true
+          gesture_distance = 300
+          gesture_positive = true
+        }
+      }
+      bind = ALT, space, hyprexpo:expo, toggle
 
+      bind = WIN, TAB, overview:toggle, all
+      bind = WIN SHIFT, TAB, overview:close, all
+      plugin {
+        overview {
+          panelColor = rgba(00000000)
+          panelBorderColor = rgba(E0E0E0FF)
+          workspaceActiveBackground = rgba(E0E0E0FF)
+          workspaceInactiveBackground = rgba(0F0F0FFF)
+          workspaceActiveBorder = rgba(E0E0E0FF)
+          workspaceInactiveBorder = rgba(E0E0E033)
+          dragAlpha = 1
 
-            bind = WIN, TAB, overview:toggle, all
-            bind = WIN SHIFT, TAB, overview:close, all
-     plugin {
-              overview {
-                panelColor = rgba(00000000)
-                panelBorderColor = rgba(E0E0E0FF)
-                workspaceActiveBackground = rgba(E0E0E0FF)
-                workspaceInactiveBackground = rgba(0F0F0FFF)
-                workspaceActiveBorder = rgba(E0E0E0FF)
-                workspaceInactiveBorder = rgba(E0E0E033)
-                dragAlpha = 1
+          panelBorderWidth = 10
+          panelHeight = 275
+          reservedArea = 70
+          gapsIn = 10
+          gapeOut = 10
+          onBottom = false
+          centerAligned = true
+          hideBackgroundLayers = false
+          hideOverlayLayers = true
+          hideRealLayers = false
+          drawActiveWorkspace = true
+          affectStrut = false
 
-                panelBorderWidth = 10
-                panelHeight = 275
-                reservedArea = 70
-                gapsIn = 10
-                gapeOut = 10
-                onBottom = false
-                centerAligned = true
-                hideBackgroundLayers = false
-                hideOverlayLayers = true
-                hideRealLayers = false
-                drawActiveWorkspace = true
-                affectStrut = false
-
-                exitOnClick = true
-                switchOnDrop = true
-                showEmptyWorkspace = false
-                showSpecialWorkspace = false
-
-              }
-            }
+          exitOnClick = true
+          switchOnDrop = true
+          showEmptyWorkspace = false
+          showSpecialWorkspace = false
+        }
+      }
+    '';
   };
 }
-

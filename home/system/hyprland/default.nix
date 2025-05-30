@@ -6,7 +6,6 @@
     ./hyprland.nix
     ./windowrules.nix
     ./animations.nix
-    ./variables.nix
   ];
 }
 
