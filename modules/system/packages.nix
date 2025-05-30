@@ -8,6 +8,7 @@
     };
     hyprland.enable = true;
     xwayland.enable = true;
+    waybar.enable = true;
   };
    nixpkgs.config.allowUnfree = true;
 }

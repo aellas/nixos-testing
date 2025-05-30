@@ -12,6 +12,7 @@
     hyprland-qtutils #needed for banners and ANR
     hyprland-qt-support
     hyprland-protocols
+    rofi-wayland
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [
@@ -83,7 +84,7 @@
         middle_click_paste = true;
         enable_anr_dialog = true;
         anr_missed_pings = 20;
-        font_family = "Maple Mono";
+        font_family = "Ubuntu Nerd Font Regular";
       };
 
       dwindle = {

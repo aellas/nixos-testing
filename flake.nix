@@ -23,7 +23,7 @@
           modules = [
             ./hosts/${name}/default.nix
             ./modules/system/boot.nix
-            #./modules/system/fonts.nix
+            ./modules/system/fonts.nix
             ./modules/system/packages.nix
             ./modules/system/network.nix
             ./modules/system/services.nix
