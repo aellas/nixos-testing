@@ -40,6 +40,7 @@
               home-manager.users.array = import ./home/home.nix;
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
+                inputs.nixvim.homeModules.nixvim
               ];
             }
           ] ++ extraModules;
