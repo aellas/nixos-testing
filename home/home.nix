@@ -9,6 +9,7 @@
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
     ./system/fish.nix
+    (builtins.trace "Loading: ${toString ../home/system/picom.nix}" ../home/system/picom.nix)
     ./apps/nixvim/nixvim.nix
   ];
 
