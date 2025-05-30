@@ -60,7 +60,6 @@
           hardwareModule = nixos-hardware.nixosModules.dell-xps-13-7390;
         };
 
-        # Add more host configurations here as needed
       };
-    };
+  };
 }
