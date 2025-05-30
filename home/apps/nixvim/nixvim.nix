@@ -2,15 +2,16 @@
 
 {
   programs.nixvim = {
-    enable = true;
+    # No enable = true; here
     colorschemes.oxocarbon.enable = true;
     plugins.lualine.enable = true;
 
-    plugins.alpha.enable = true;
+    plugins.alpha = {
+      # No enable = true; here either
+    };
 
     imports = [
-     ./plugins/alpha.nix
-  ];
-
+      ./plugins/alpha.nix
+    ];
   };
 }
