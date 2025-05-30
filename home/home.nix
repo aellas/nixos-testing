@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: # <--- IMPORTANT: Add 'inputs' here if it's not already
+{ config, pkgs, inputs, ... }:
 {
   home.username = "array";
   home.homeDirectory = "/home/array";
