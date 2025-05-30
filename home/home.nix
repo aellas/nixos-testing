@@ -10,7 +10,9 @@
     ./apps/nixcord.nix
     ./system/fish.nix
     ./system/hyprland/default.nix
+    ./system/waybar.nix
     ./apps/nixvim/nixvim.nix
+
   ];
 
     home.stateVersion = "25.11";

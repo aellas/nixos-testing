@@ -6,11 +6,11 @@
     bind = [
       "$modifier,Return,exec,kitty"
       "$modifier,B,exec,firefox"
-      "$modifier,D,discord"
-      "$modifier,M,youtube-music"
       "$modifier,TAB,layoutmsg, swapwithmaster"
-      "$modifier,G,github-desktop"
-
+      "$modifier,q,killactive"
+      "$modifier,m,exec,youtube-music"
+      "$modifier,backslash,exec,codium"
+      "$modifier,g,exec,github-desktop"
     ];
 
     bindm = [

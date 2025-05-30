@@ -29,17 +29,12 @@
     xwayland.enable = true;
 
     plugins = [
-      pkgs.hyprlandPlugins.hyprtrails
-      pkgs.hyprlandPlugins.hyprexpo
-      pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
       input = {
         kb_layout = "us";
         kb_options = [
-          "grp:alt_caps_toggle"
-          "caps:super"
         ];
         numlock_by_default = false;
         repeat_delay = 300;
@@ -67,8 +62,8 @@
       general = {
         "$modifier" = "SUPER";
         layout = "master";
-        gaps_in = 6;
-        gaps_out = 8;
+        gaps_in = 4;
+        gaps_out = 4;
         border_size = 2;
         resize_on_border = true;
         "col.active_border" = "0xee050607";
@@ -98,7 +93,7 @@
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 4;
         blur = {
           enabled = true;
           size = 6;
@@ -141,59 +136,10 @@
     };
 
     extraConfig = ''
-      monitor=,preferred,auto,auto
+      monitor= eDP-1,disable
+      monitor= DP-5,1920x1080@240,auto,1
       #source = ~/.config/hypr/monitors.conf
       #source = ~/.config/hypr/workspaces.conf
-
-      plugin {
-        hyprtrails {
-          color = rgba(33ccff80)
-        }
-      }
-      plugin {
-        hyprexpo {
-          columns = 3
-          gap_size = 5
-          bg_col = rgb(111111)
-          workspace_method = center current
-          enable_gesture = true
-          gesture_distance = 300
-          gesture_positive = true
-        }
-      }
-      bind = ALT, space, hyprexpo:expo, toggle
-
-      bind = WIN, TAB, overview:toggle, all
-      bind = WIN SHIFT, TAB, overview:close, all
-      plugin {
-        overview {
-          panelColor = rgba(00000000)
-          panelBorderColor = rgba(E0E0E0FF)
-          workspaceActiveBackground = rgba(E0E0E0FF)
-          workspaceInactiveBackground = rgba(0F0F0FFF)
-          workspaceActiveBorder = rgba(E0E0E0FF)
-          workspaceInactiveBorder = rgba(E0E0E033)
-          dragAlpha = 1
-
-          panelBorderWidth = 10
-          panelHeight = 275
-          reservedArea = 70
-          gapsIn = 10
-          gapeOut = 10
-          onBottom = false
-          centerAligned = true
-          hideBackgroundLayers = false
-          hideOverlayLayers = true
-          hideRealLayers = false
-          drawActiveWorkspace = true
-          affectStrut = false
-
-          exitOnClick = true
-          switchOnDrop = true
-          showEmptyWorkspace = false
-          showSpecialWorkspace = false
-        }
-      }
     '';
   };
 }
