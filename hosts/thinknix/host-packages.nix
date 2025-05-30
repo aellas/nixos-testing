@@ -4,5 +4,7 @@
       kdePackages.kate
       github-desktop
       youtube-music
+      git
+      vscodium
   ];
 }
