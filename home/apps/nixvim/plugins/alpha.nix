@@ -1,5 +1,8 @@
+{ config, pkgs, ... }: # Keep this line for it to be a proper module
 {
-  programs.nixvim.plugins.alpha.layout = [
+  # REMOVE 'programs.nixvim' here. Just define the content directly.
+  # It's already implicitly nested under programs.nixvim from nixvim.nix's import.
+  plugins.alpha.layout = [ # <--- START HERE
     # --- Header Section ---
     {
       type = "text";
@@ -8,10 +11,12 @@
         position = "center";
       };
       val = [
+        "                               "
+        "                               "
         "   ██████╗ ███╗   ███╗██╗  ██╗ "
         "  ██╔════╝ ████╗ ████║██║  ██║ "
-        "  ██║ ███╗██╔████╔██║███████║ "
-        "  ██║  ██║██║╚██╔╝██║██╔══██║ "
+        "  ██║ ███╗ ██╔████╔██║███████║ "
+        "  ██║  ██║ ██║╚██╔╝██║██╔══██║ "
         "  ╚██████╔╝██║ ╚═╝ ██║██║  ██║ "
         "   ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝ "
         "        Forever, always."
@@ -32,7 +37,7 @@
           type = "button";
           val = "  New file";
           opts = {
-            shortcut = "n";
+            shortcut = "            n";
             hl = "String"; # Highlight for the button text
           };
           on_press = {
@@ -91,13 +96,12 @@
             hl = "String";
           };
           on_press = {
-            # Adjust this path if your Nixvim config is elsewhere
             __raw = "function() vim.cmd[[e ~/.config/nvim/init.lua]] end";
           };
         }
         {
           type = "button";
-          val = "  Quit Neovim";
+          val = "    Quit Neovim";
           opts = {
             shortcut = "q";
             hl = "String";
