@@ -13,6 +13,9 @@
       "$modifier,g,exec,github-desktop"
       "$modifier,n,exec,thunar"
       "$modifier,space,exec, rofi -show drun -config ~/.config/rofi/menu.config.rasi"
+      "$modifier SHIFT,q,exec,hyprctl dispatch exit"
+      "$modifier SHIFT,w,exec,pkill waybar && waybar &"
+      "$modifier,f,togglefloating"
       "$modifier,left,movefocus,l"
       "$modifier,right,movefocus,r"
       "$modifier,up,movefocus,u"
@@ -47,9 +50,6 @@
       ",XF86AudioPrev, exec, playerctl previous"
       ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
       ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
-
-
-
 
     ];
 

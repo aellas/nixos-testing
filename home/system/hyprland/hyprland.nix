@@ -13,6 +13,8 @@
     hyprland-qt-support
     hyprland-protocols
     rofi-wayland
+    hyprpicker
+    waypaper
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [

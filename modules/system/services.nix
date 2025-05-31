@@ -1,5 +1,4 @@
 {profile, ...}: {
-  # Services to start
   services = {
     libinput.enable = true;
     fstrim.enable = true;
@@ -11,8 +10,10 @@
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
     xserver.enable = true;
-    xserver.xkb = { layout = "us"; variant = ""; };
-
+    xserver.xkb = { 
+      layout = "us"; 
+      variant = ""; 
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
