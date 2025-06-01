@@ -5,7 +5,6 @@
     settings = {
       backend = "glx";
       vsync = true;
-      extraConfig = builtins.readFile ./animations.conf;
       "glx-use-copysubbuffer-mesa" = true;
       "xrender-sync" = true;
       "xrender-sync-fence" = true;
