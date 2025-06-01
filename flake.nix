@@ -52,7 +52,7 @@
         "thinknix" = mkNixosConfig {
           name = "thinknix";
           hardwareModule = nixos-hardware.nixosModules.lenovo-thinkpad-x390;
-          extraModules = [ ./modules/services/thinkfan.nix  ./modules/services/qtile/qtile.nix ];
+          extraModules = [ ./modules/services/thinkfan.nix  ./modules/services/qtile/qtile.nix ./modules/system/qtile/picom.nix ];
         };
 
         "xpsnix" = mkNixosConfig {

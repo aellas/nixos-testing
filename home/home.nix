@@ -9,12 +9,8 @@
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
     ./system/fish.nix
-    ./system/hyprland/default.nix
-    ./system/waybar.nix
     ./apps/nixvim/nixvim.nix
 
-    # Qtile Specific
-    ./system/picom.nix
  ];
 
     home.stateVersion = "25.11";
