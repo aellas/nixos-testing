@@ -9,7 +9,7 @@
 
       pywal
       feh
-      picom-pijulius
+      picom
       dunst
       xclip
       pavucontrol

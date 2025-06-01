@@ -10,6 +10,9 @@
     ./apps/nixcord.nix
     ./system/fish.nix
     ./apps/nixvim/nixvim.nix
+
+    ./system/picom/picom.nix
+
  ];
 
     home.stateVersion = "25.11";
