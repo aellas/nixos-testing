@@ -30,6 +30,7 @@
             ./modules/system/security.nix
             ./modules/system/system.nix
             ./modules/system/users.nix
+            ./modules/services/gnome-keyring.nix
 
             hardwareModule
 
