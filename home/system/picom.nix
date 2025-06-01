@@ -1,6 +1,7 @@
 {
   programs.picom = {
     enable = true;
+    package = pkgs.picom; # Optional: fork with animations
 
     settings = {
       backend = "glx";
@@ -64,15 +65,9 @@
           shadow = false;
           "clip-shadow-above" = true;
         };
-        dnd = {
-          shadow = false;
-        };
-        popup_menu = {
-          opacity = 1.0;
-        };
-        dropdown_menu = {
-          opacity = 1.0;
-        };
+        dnd = { shadow = false; };
+        popup_menu = { opacity = 1.0; };
+        dropdown_menu = { opacity = 1.0; };
       };
 
       animations = [
