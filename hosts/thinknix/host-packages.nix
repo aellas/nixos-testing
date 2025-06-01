@@ -9,7 +9,7 @@
 
       pywal
       feh
-      picom
+      picom-pijulius
       dunst
       xclip
       pavucontrol
@@ -19,6 +19,7 @@
       alsa-utils
       playerctl
       haskellPackages.greenclip
+      rofi
 
   ];
 }

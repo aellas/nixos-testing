@@ -6,8 +6,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-    hyprland.enable = true;
-    xwayland.enable = true;
   };
    nixpkgs.config.allowUnfree = true;
 }
