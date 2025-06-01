@@ -12,6 +12,9 @@
     ./system/hyprland/default.nix
     ./system/waybar.nix
     ./apps/nixvim/nixvim.nix
+
+    # Qtile Specific
+    ./system/picom.nix
  ];
 
     home.stateVersion = "25.11";

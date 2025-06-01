@@ -10,6 +10,4 @@
   services.xserver.windowManager.qtile.extraPackages = python3Packages: with python3Packages; [
     qtile-extras
   ];
-
-  services.xserver.windowManager.qtile.configFile = ./config.py;
 }
