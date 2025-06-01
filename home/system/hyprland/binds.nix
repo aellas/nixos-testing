@@ -15,6 +15,7 @@
       "$modifier,space,exec, rofi -show drun -config ~/.config/rofi/menu.config.rasi"
       "$modifier SHIFT,q,exec,hyprctl dispatch exit"
       "$modifier SHIFT,w,exec,pkill waybar && waybar &"
+      "$modifier,a,exec,grim -g \"$(slurp)\" - | satty --filename - --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H-%M-%S').png"
       "$modifier,f,togglefloating"
       "$modifier,left,movefocus,l"
       "$modifier,right,movefocus,r"

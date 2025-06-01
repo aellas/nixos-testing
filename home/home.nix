@@ -12,7 +12,7 @@
     ./system/hyprland/default.nix
     ./system/waybar.nix
     ./apps/nixvim/nixvim.nix
-
+    ./system/qtile/default.nix
   ];
 
     home.stateVersion = "25.11";

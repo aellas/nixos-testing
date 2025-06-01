@@ -39,7 +39,6 @@
           format = "  ";
         };
 
-
         "pulseaudio" = {
           format = "   {volume}%";
           format-muted = "";

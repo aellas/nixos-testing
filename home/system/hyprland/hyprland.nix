@@ -15,6 +15,7 @@
     rofi-wayland
     hyprpicker
     waypaper
+    satty
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [
