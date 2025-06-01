@@ -9,6 +9,8 @@
       seahorse
       libsecret
       polkit_gnome
+      xfce.thunar
+      nwg-look
 
       pywal
       feh

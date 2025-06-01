@@ -31,6 +31,7 @@
             ./modules/system/system.nix
             ./modules/system/users.nix
             ./modules/services/gnome-keyring.nix
+            ./modules/system/gtk.nix
 
             hardwareModule
 
