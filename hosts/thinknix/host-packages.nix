@@ -6,10 +6,12 @@
       youtube-music
       git
       vscodium
+      seahorse
+      libsecret
+      polkit_gnome
 
       pywal
       feh
-      picom
       dunst
       xclip
       pavucontrol
