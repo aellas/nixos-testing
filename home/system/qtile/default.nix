@@ -1,5 +1,4 @@
 {
   imports = [
-    ./greenclip.nix
   ];
 }
