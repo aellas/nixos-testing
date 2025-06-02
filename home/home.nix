@@ -11,7 +11,7 @@
     ./system/fish.nix
     ./apps/nixvim/nixvim.nix
 
-    ./system/picom/default.nix
+    ./system/picom.nix
     ./system/gtk.nix
 
  ];
