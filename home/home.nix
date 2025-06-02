@@ -10,7 +10,6 @@
     ./apps/nixcord.nix
     ./apps/nixvim/nixvim.nix
 
-    ./system/picom.nix
     ./system/gtk.nix
     ./system/fish.nix
 
