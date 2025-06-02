@@ -8,7 +8,6 @@
     ./apps/kitty.nix
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
-    ./apps/thunar.nix
     ./apps/nixvim/nixvim.nix
 
     ./system/picom.nix
