@@ -12,7 +12,7 @@
 
     ./system/gtk.nix
     ./system/fish.nix
-    ./system/picom/picom.nix
+    ./system/picom.nix
 
 
  ];
