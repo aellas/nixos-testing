@@ -1,85 +1,89 @@
-{ config, lib, pkgs, ... }:
-
 {
   services.picom = {
     enable = true;
-    backend = "glx";
-    vsync = true;
-    vSyncHelper = "opengl"; # This is the equivalent for glx-use-copysubbuffer-mesa and glx-copy-from-front
-    # glx-copy-from-front and glx-swap-method are not directly transferable in the same way.
-    # vSyncHelper = "opengl" handles a lot of the GLX specific synchronization.
-    xrenderSync = true;
-    xrenderSyncFence = true;
-
-    # Corners
-    roundedCorners = true;
-    cornerRadius = 6;
-    roundedCornersExclude = [
-      "class_g = 'i3-frame'"
-      "class_g = 'rofi'"
-      "name = 'Notification'"
-      "window_type = 'dock'"
-      "window_type = 'desktop'"
-    ];
-    detectRoundedCorners = true;
-
-    # Blur
-    blurMethod = "dual_kawase";
-    blurSize = 8;
-    blurStrength = 6;
-    blurBackground = true;
-    blurBackgroundFrame = false;
-    blurKern = "3x3box";
-    blurBackgroundExclude = [
-      "window_type = 'Polybar'"
-      "window_type = 'desktop'"
-      "window_type = 'dock'"
-      "role = 'xborder'"
-      "class_g = 'Conky'"
-      "name = 'Notification'"
-      "_GTK_FRAME_EXTENTS"
-    ];
-
-    # Shadows
-    shadow = true;
-    shadowRadius = 20;
-    shadowOffsetX = -17;
-    shadowOffsetY = -17;
-    shadowOpacity = 0.4;
-    shadowColor = "#000000";
-
-    # Fading
-    fading = true;
-    fadeInStep = 0.04;
-    fadeOutStep = 0.04;
-    fadeDelta = 10;
-    fadeTime = 200;
-    fadeDuration = 300;
-    noFadingOpenclose = true;
-    noFadingDestroyedArgb = true;
-
-    # Wintypes
-    wintypes = {
-      tooltip = {
-        fade = true;
+      settings = {
+        animations = true;
+        animation-stiffness = 300.0;
+        animation-dampening = 35.0;
+        animation-clamping = false;
+        animation-mass = 1;
+        animation-for-workspace-switch-in = "fade";
+        animation-for-workspace-switch-out = "fade";
+        animation-for-open-window = "slide-down";
+        animation-for-menu-window = "none";
+        animation-for-transient-window = "slide-down";
+        
+        fading = true;
+        fade-in-step = 0.04;
+        fade-out-step = 0.04;
+        fade-delta = 10;
+        fade-time = 200;
+        fade-duration = 300;
+        no-fading-openclose = true;
+        no-fading-destroyed-argb = true;
+        corner-radius = 6;
+        rounded-corners-exclude = [
+          "class_i = 'polybar'"
+          "class_g = 'i3lock'"
+        ];
+        round-borders = 3;
+        round-borders-exclude = [];
+        round-borders-rule = [];
         shadow = true;
-        opacity = 0.75;
-        focus = true;
-        fullShadow = false;
-      };
-      dock = {
-        shadow = false;
-        clipShadowAbove = true;
-      };
-      dnd = {
-        shadow = false;
-      };
-      popupMenu = {
-        opacity = 1.0;
-      };
-      dropdownMenu = {
-        opacity = 1.0;
+        shadow-radius = 8;
+        shadow-opacity = 0.4;
+        shadow-offset-x = -8;
+        shadow-offset-y = -8;
+        inactive-opacity = 1.0;
+        frame-opacity = 1.0;
+        inactive-opacity-override = false;
+        active-opacity = 1.0;
+        focus-exclude = [
+        ];
+
+        opacity-rule = [
+          "100:class_g = 'i3lock'"
+          "60:class_g = 'Dunst'"
+          "100:class_g = 'Alacritty' && focused"
+          "90:class_g = 'Alacritty' && !focused"
+        ];
+
+        blur = {
+          method = "kernel";
+          strength = 0;
+          background = false;
+          background-frame = false;
+          background-fixed = false;
+          kern = "dual_kawase";
+        };
+
+        shadow-exclude = [
+          "class_g = 'Dunst'"
+        ];
+
+        blur-background-exclude = [
+          "class_g = 'Dunst'"
+        ];
+
+        backend = "glx";
+        vsync = true;
+        mark-wmwin-focused = true;
+        mark-ovredir-focused = true;
+        detect-rounded-corners = true;
+        detect-client-opacity = false;
+        detect-transient = true;
+        detect-client-leader = true;
+        use-damage = true;
+        log-level = "info";
+
+        wintypes = {
+          normal = { fade = true; shadow = false; };
+          tooltip = { fade = true; shadow = false; opacity = 0.75; focus = true; full-shadow = false; };
+          dock = { shadow = false; };
+          dnd = { shadow = false; };
+          popup_menu = { opacity = 1.0; };
+          dropdown_menu = { opacity = 1.0; };
+        };
       };
     };
-  };
 }

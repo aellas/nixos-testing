@@ -35,6 +35,7 @@
       polkit_gnome
       nwg-look
       picom
+      protonvpn-gui
     ];
 
 }

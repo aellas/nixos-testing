@@ -4,7 +4,7 @@
   programs.qtile.enable = true;
 
   xdg.configFile."qtile" = {
-     source = /home/array/.config/qtile; # Assuming your config files are in a 'src' directory
+     source = /home/array/.config/qtile;
      recursive = true;
    };
 
