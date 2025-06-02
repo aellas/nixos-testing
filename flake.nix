@@ -31,7 +31,7 @@
             ./modules/system/system.nix
             ./modules/system/users.nix
             ./modules/services/gnome-keyring.nix
-            ./modules/services/picom.nix
+            ./modules/apps/thunar.nix
 
             hardwareModule
 

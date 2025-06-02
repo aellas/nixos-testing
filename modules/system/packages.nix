@@ -34,6 +34,7 @@
       libsecret
       polkit_gnome
       nwg-look
+      picom
     ];
 
 }
