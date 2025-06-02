@@ -1,28 +1,5 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-      bolt-launcher
-      github-desktop
-      youtube-music
-      git
-      vscodium
-      seahorse
-      libsecret
-      polkit_gnome
-      xfce.thunar
-      nwg-look
-
-      pywal
-      feh
-      dunst
-      xclip
-      pavucontrol
-      pywalfox-native
-      pulseaudio
-      pamixer
-      alsa-utils
-      playerctl
-      haskellPackages.greenclip
-      rofi
 
   ];
 }

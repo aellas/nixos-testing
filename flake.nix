@@ -22,16 +22,7 @@
 
           modules = [
             ./hosts/${name}/default.nix
-            ./modules/system/boot.nix
-            ./modules/system/fonts.nix
-            ./modules/system/packages.nix
-            ./modules/system/network.nix
-            ./modules/system/services.nix
-            ./modules/system/security.nix
-            ./modules/system/system.nix
-            ./modules/system/users.nix
-            ./modules/services/gnome-keyring.nix
-            ./modules/apps/thunar.nix
+            ./modules/default.nix
 
             hardwareModule
 

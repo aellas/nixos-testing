@@ -1,4 +1,5 @@
-{profile, ...}: {
+{profile, ...}: 
+{
   services = {
     libinput.enable = true;
     fstrim.enable = true;
