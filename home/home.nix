@@ -12,6 +12,7 @@
     ./apps/nixvim/nixvim.nix
 
     ./system/picom.nix
+    ./system/gtk.nix
 
  ];
 
