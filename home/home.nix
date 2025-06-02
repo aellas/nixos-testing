@@ -8,11 +8,13 @@
     ./apps/kitty.nix
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
-    ./system/fish.nix
+    ./apps/thunar.nix
     ./apps/nixvim/nixvim.nix
 
     ./system/picom.nix
     ./system/gtk.nix
+    ./system/fish.nix
+
 
  ];
 
