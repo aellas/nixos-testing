@@ -32,6 +32,7 @@
             ./modules/system/users.nix
             ./modules/services/gnome-keyring.nix
             ./modules/apps/thunar.nix
+            ./modules/apps/greenclip.nix
 
 
             hardwareModule
