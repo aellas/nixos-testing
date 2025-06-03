@@ -5,6 +5,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./system/display.nix
     ./apps/kitty.nix
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
