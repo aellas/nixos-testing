@@ -1,16 +1,17 @@
 { config, pkgs, lib, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    haskellPackages.greenclip
+    xclip  # required for clipboard access
+  ];
+
   systemd.user.services.greenclip = {
-    enable = true;
-    description = "Greenclip - clipboard manager";
-    script = "${pkgs.haskellPackages.greenclip}/bin/greenclip daemon"; # Or whatever the command to run the daemon is
-    wantedBy = [ "graphical-session.target" ]; # Or "default.target"
+    description = "Greenclip clipboard manager";
+    wantedBy = [ "default.target" ];
     serviceConfig = {
+      ExecStart = "${pkgs.haskellPackages.greenclip}/bin/greenclip daemon";
       Restart = "on-failure";
-      # Add any other specific systemd service options if needed
+      Environment = "DISPLAY=:0";  # Only needed on X11
     };
   };
-
-  # You might also want to ensure the greenclip executable is in your path
-  home.packages = [ pkgs.haskellPackages.greenclip ];
 }
