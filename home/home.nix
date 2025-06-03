@@ -15,6 +15,8 @@
     ./system/picom.nix
     ./system/qtile/default.nix
 
+    ./system/greenclip.nix
+
  ];
 
     home.stateVersion = "25.11";
