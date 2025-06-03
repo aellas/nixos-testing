@@ -15,7 +15,7 @@
     ./system/picom.nix
     ./system/qtile/default.nix
 
-    ./system/clipmenu.nix
+    ./system/greenclip.nix
 
 
  ];
