@@ -34,6 +34,7 @@
       nwg-look
       picom
       protonvpn-gui
+      xclip
     ];
 
 }
