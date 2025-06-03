@@ -9,5 +9,7 @@
 
   services.xserver.windowManager.qtile.extraPackages = python3Packages: with python3Packages; [
     qtile-extras
+
+
   ];
 }
