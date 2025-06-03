@@ -16,14 +16,12 @@
       pywal
       feh
       dunst
-      xclip
       pavucontrol
       pywalfox-native
       pulseaudio
       pamixer
       alsa-utils
       playerctl
-      haskellPackages.greenclip
       rofi
       bolt-launcher
       github-desktop

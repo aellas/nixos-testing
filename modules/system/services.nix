@@ -8,6 +8,7 @@
     openssh.enable = true;
     blueman.enable = true;
     tumbler.enable = true;
+    greenclip.enable = true;
     displayManager.sddm.enable = true;
     xserver.enable = true;
     xserver.xkb = { 

@@ -33,6 +33,8 @@
             ./modules/services/gnome-keyring.nix
             ./modules/apps/thunar.nix
 
+            ./modules/services/greenclip.nix
+
             hardwareModule
 
             home-manager.nixosModules.home-manager
