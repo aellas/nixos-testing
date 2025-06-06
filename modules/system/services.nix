@@ -10,6 +10,7 @@
     tumbler.enable = true;
     displayManager.sddm.enable = true;
     xserver.enable = true;
+    greenclip.enable = true;
     xserver.xkb = { 
       layout = "us"; 
       variant = ""; 
