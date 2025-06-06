@@ -57,6 +57,7 @@
           hardwareModule = nixos-hardware.nixosModules.lenovo-thinkpad-x390;
           extraModules = [ 
             ./modules/services/thinkfan.nix  
+            ./modules/services/thinktlp.nix
             ./modules/services/qtile/default.nix 
             ];
         };
