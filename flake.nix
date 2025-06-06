@@ -66,7 +66,13 @@
           name = "xpsnix";
           hardwareModule = nixos-hardware.nixosModules.dell-xps-13-7390;
         };
-
+        "arynix" = mkNixosConfig {
+          name = "arynix";
+          extraModules = [ 
+            ./modules/system/docker.nix
+            ./modules/services/qtile/default.nix 
+            ];
       };
+    };
   };
 }

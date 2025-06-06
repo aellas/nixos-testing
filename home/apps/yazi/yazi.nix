@@ -30,13 +30,13 @@
     opener = {
       edit = [
         {
-          run = ''${"EDITOR:-vi"} "$@"'';
+          run = "nvim";
           desc = "$EDITOR";
           block = true;
           for = "unix";
         }
         {
-          run = "code %*";
+          run = "codium %*";
           orphan = true;
           desc = "code";
           for = "windows";

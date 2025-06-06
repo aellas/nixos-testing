@@ -4,8 +4,8 @@
     gtk = {
     enable = true;
     theme = {
-      name = "Plata-Noir";
-      package = pkgs.plata-theme;
+      name = "Graphite-Dark";
+      package = pkgs.graphite-gtk-theme;
     };
     iconTheme = {
       name = "ePapirus";
@@ -16,7 +16,7 @@
     dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Plata-Noir";
+      gtk-theme = "Graphite-Dark";
       icon-theme = "ePapirus";
     };
   };
