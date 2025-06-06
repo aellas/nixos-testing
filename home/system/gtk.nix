@@ -4,8 +4,8 @@
     gtk = {
     enable = true;
     theme = {
-      name = "Gruvbox-Dark";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Plata-Noir";
+      package = pkgs.plata-theme;
     };
     iconTheme = {
       name = "ePapirus";
@@ -16,7 +16,7 @@
     dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Gruvbox-Dark";
+      gtk-theme = "Plata-Noir";
       icon-theme = "ePapirus";
     };
   };

@@ -9,6 +9,7 @@
     ./apps/fastfetch/default.nix
     ./apps/nixcord.nix
     ./apps/nixvim/nixvim.nix
+    ./apps/yazi/default.nix
 
     ./system/gtk.nix
     ./system/fish.nix

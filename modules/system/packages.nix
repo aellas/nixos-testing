@@ -13,7 +13,7 @@
 
     environment.systemPackages = with pkgs;
     [
-      pywal
+      pywal16
       feh
       dunst
       pavucontrol
