@@ -15,7 +15,6 @@
     ./system/fish.nix
     ./system/picom.nix
     ./system/qtile/default.nix
-    ./system/greenclip.nix
 
  ];
 
