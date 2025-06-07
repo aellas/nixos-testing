@@ -29,6 +29,7 @@
       brave
       mission-center
       gpick
+      lazygit
     ];
 
 }
