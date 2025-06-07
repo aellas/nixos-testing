@@ -27,7 +27,6 @@
       xclip
       haskellPackages.greenclip
       brave
-      mission-center
       gpick
       lazygit
     ];
