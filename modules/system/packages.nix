@@ -34,6 +34,7 @@
       nwg-look
       picom
       xclip
+      haskellPackages.greenclip
     ];
 
 }
