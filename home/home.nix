@@ -14,7 +14,7 @@
     ./system/gtk.nix
     ./system/fish.nix
     ./system/picom/picom.nix
-    ./system/qtile/default.nix
+    ./system/qtile.nix
 
  ];
 

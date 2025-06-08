@@ -59,7 +59,6 @@
             ./modules/services/thinkfan.nix  
             ./modules/services/thinktlp.nix
             ./modules/services/thinkundervolt.nix
-            ./modules/services/qtile/default.nix 
             ];
         };
 
