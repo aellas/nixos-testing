@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/Documents/QtileDots/wallpapers/"
+WALLPAPER_DIR="/home/$USER/nixos-testing/home/system/qtile/wallpapers/"
 
 # Use rofi to select a wallpaper
 SELECTED=$(find "$WALLPAPER_DIR" -type f | sort | rofi -dmenu -i -p "Select Wallpaper")
@@ -13,7 +13,7 @@ SELECTED=$(find "$WALLPAPER_DIR" -type f | sort | rofi -dmenu -i -p "Select Wall
 feh --bg-fill "$SELECTED"
 
 # Generate pywal colors
-wal -i "$SELECTED"
+wal --cols16 -i "$SELECTED"
 
 # Reload Qtile config
 qtile cmd-obj -o cmd -f reload_config

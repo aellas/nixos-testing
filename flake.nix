@@ -22,17 +22,10 @@
 
           modules = [
             ./hosts/${name}/default.nix
-            ./modules/system/boot.nix
-            ./modules/system/fonts.nix
-            ./modules/system/packages.nix
-            ./modules/system/network.nix
-            ./modules/system/services.nix
-            ./modules/system/security.nix
-            ./modules/system/system.nix
-            ./modules/system/users.nix
-            ./modules/services/gnome-keyring.nix
-            ./modules/apps/thunar.nix
-
+            ./modules/apps/default.nix
+            ./modules/core/default.nix
+            ./modules/services/default.nix
+            ./modules/system/default.nix
 
             hardwareModule
 
@@ -43,7 +36,6 @@
               home-manager.users.array = import ./home/home.nix;
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
-                inputs.nixvim.homeModules.nixvim
               ];
             }
           ] ++ extraModules;
@@ -55,8 +47,8 @@
         "thinknix" = mkNixosConfig {
           name = "thinknix";
           hardwareModule = nixos-hardware.nixosModules.lenovo-thinkpad-x390;
-          extraModules = [ 
-            ./modules/services/thinkfan.nix  
+          extraModules = [
+            ./modules/services/thinkfan.nix
             ./modules/services/thinktlp.nix
             ./modules/services/thinkundervolt.nix
             ];
@@ -66,12 +58,14 @@
           name = "xpsnix";
           hardwareModule = nixos-hardware.nixosModules.dell-xps-13-7390;
         };
+
         "arynix" = mkNixosConfig {
           name = "arynix";
-          extraModules = [ 
-            ./modules/system/docker.nix
-            ./modules/services/qtile/default.nix 
-            ];
+          hardwareModule = {};
+          extraModules = [
+            ./modules/drivers/amd.nix
+            ./modules/apps/corectrl.nix
+          ];
       };
     };
   };

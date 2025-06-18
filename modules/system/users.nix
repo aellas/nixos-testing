@@ -18,8 +18,9 @@
       "networkmanager"
       "scanner"
       "wheel"
+      "audio"
     ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
   nix.settings.allowed-users = ["array"];

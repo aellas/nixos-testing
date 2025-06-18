@@ -2,15 +2,9 @@
   
    nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = with pkgs;
-    [
-      bolt-launcher
-      github-desktop
-      youtube-music
-      vscodium
-      brave
-      lazygit
-      mission-center
-    ];
+   environment.systemPackages = with pkgs; [];
 
+   nixpkgs.config.permittedInsecurePackages = [
+     "openssl-1.1.1w"
+    ];
 }

@@ -4,8 +4,8 @@
     gtk = {
     enable = true;
     theme = {
-      name = "Graphite-Dark";
-      package = pkgs.graphite-gtk-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
     };
     iconTheme = {
       name = "ePapirus";
@@ -16,7 +16,7 @@
     dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Graphite-Dark";
+      gtk-theme = "Colloid-Dark";
       icon-theme = "ePapirus";
     };
   };

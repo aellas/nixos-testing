@@ -32,7 +32,7 @@
         {
           run = "nvim";
           desc = "$EDITOR";
-          block = true;
+          block = false;
           for = "unix";
         }
         {

@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-      qtile
-      qtile-extras
       pywal16
       feh
       dunst
@@ -10,7 +8,6 @@
       pamixer
       alsa-utils
       playerctl
-      rofi
       git
       polkit_gnome
       picom

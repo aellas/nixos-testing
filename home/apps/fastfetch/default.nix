@@ -3,52 +3,74 @@
     enable = true;
 
     settings = {
-      separator = "∷ ";
+      separator = "- ";
+
+    display = {
+      constants = [
+          "██ "
+      ];
+    };
 
       logo = {
-        source = ./ascii.txt;
+        source = ./nixos.webp;
+        type = "kitty"; 
+        padding = {
+          top = 2;
+          right = 5;
+          left = 3;
+        };
       };
 
       modules = [
-     "break"
-     "break"
+      "break"
+      "break"
 
         {
             type = "os";
-            key = "  os ";
+            key = "{$1}Distro";
             format = "{3}";
-            keyColor = "white";
+            keyColor = "38;5;147";
         }
         {
             type = "kernel";
-            key = "kern ";
-            keyColor = "33";
+            key = "{$1}Kernel";
+            keyColor = "38;5;75";
         }
         {
             type = "packages";
-            key = "pkgs ";
-            keyColor = "white";
+            key = "{$1}Packages";
+            keyColor = "38;5;123";
         }
         {
             type = "uptime";
-            key = "  up ";
-            keyColor = "33";
+            key = "{$1}Uptime";
+            keyColor = "38;5;147";
+        }
+        {
+            type = "terminal";
+            key = "{$1}Terminal";
+            keyColor = "38;5;75";
+        }
+        {
+            type = "shell";
+            key = "{$1}Shell";
+            keyColor = "38;5;123";
         }
         {
             type = "wm";
-            key = "  wm ";
-            keyColor = "white";
+            key = "{$1}WM";
+            keyColor = "38;5;147";
         }
         {
             type = "command";
-            keyColor ="33";
-            key = " age ";
-            text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+            keyColor ="38;5;75";
+            key = "{$1}Day";
+            text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference";
         }
         {
             type = "command";
-            keyColor ="white";
-            key = " gen ";
+            keyColor ="38;5;123";
+            key = "{$1}Generation";
             text = "readlink /nix/var/nix/profiles/system | grep -o '[0-9]\\+'";
         }
       ];

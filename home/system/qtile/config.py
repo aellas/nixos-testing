@@ -11,18 +11,18 @@ mod = "mod4"
 # --- Key Bindings --- #
 keys = [
 # --- My Personal Keybinds --- #
-    Key([mod], "Return", lazy.spawn('kitty'), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn('ghostty'), desc="Launch terminal"),
     Key([mod], "Space", lazy.spawn('rofi -show drun'), desc="Launch app launcher (rofi)"),
-    Key([mod], "b", lazy.spawn('brave'), desc="Launch web browser"),
+    Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
     Key([mod], "n", lazy.spawn('thunar'), desc="Launch file explorer"),
     Key([mod], "j", lazy.spawn('dbus-run-session env _JAVA_AWT_WM_NONREPARENTING=1 bolt-launcher'), desc="Launch bolt launcher"),
     Key([mod], "m", lazy.spawn('youtube-music'), desc="Launch YouTube Music"),
+    Key([mod], "s", lazy.spawn('steam'), desc="Launch steam"),
     Key([mod], "d", lazy.spawn('discord'), desc="Launch Discord"),
-    Key([mod], "Backslash", lazy.spawn('codium'), desc="Launch VSCode"),
-    Key([mod], "x", lazy.spawn('gpick --pick'), desc="Launch Gpick color picker"),
-    Key([mod], "l", lazy.spawn('kitty -e nvim'), desc="Launch Neovim"),
+    Key([mod], "Backslash", lazy.spawn('codium'), desc="Launch vscodium"),
+    Key([mod], "x", lazy.spawn('gpick --pick'), desc="Launch color picker"),
+    Key([mod], "l", lazy.spawn('ghostty -e nvim'), desc="Launch nvim"),
     Key([mod], "k", lazy.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command 'echo {cmd} | xclip -selection clipboard'"), desc="Launch clipboard manager"),    
-    Key([mod, "shift"], "t", lazy.spawn('kitty /home/array/.config/qtile/scripts/switch_theme.sh'), desc="Switch theme"),
     Key([], "Home", lazy.spawn('flameshot full --clipboard --path /home/array/Pictures/Screenshots'), desc="Take full screenshot"),
     Key([mod], "Home", lazy.spawn('flameshot gui --clipboard --path /home/array/Pictures/Screenshots --accept-on-select'), desc="Take region screenshot"),
 # --- Qtile Specific Keybinds --- #
@@ -72,12 +72,21 @@ for i in groups:
 
 # --- Scratchpad ---
 groups.append(ScratchPad("scratchpad", [
-    DropDown("term", f"kitty -o ff --class=scratch --config .config/kitty/kitty.conf", width=0.2, height=0.25, x=0.40, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("term", f"ghostty", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("music", f"ghostty -e rmpc", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("files", f"ghostty -e yazi", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("theme", f"bash /home/array/.config/qtile/scripts/switch_theme.sh", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("sound", f"pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
 ]))
 
 # --- Scratchpad Keybinds ---
 keys.extend([
-    Key([mod], "v", lazy.group["scratchpad"].dropdown_toggle("term")),
+    Key([mod, "shift"], "Return", lazy.group["scratchpad"].dropdown_toggle("term")),
+    Key([mod, "shift"], "m", lazy.group["scratchpad"].dropdown_toggle("music")),
+    Key([mod, "shift"], "t", lazy.group["scratchpad"].dropdown_toggle("theme")),
+    Key([mod, "shift"], "n", lazy.group["scratchpad"].dropdown_toggle("files")),
+    Key([mod, "shift"], "s", lazy.group["scratchpad"].dropdown_toggle("sound")),
+    Key([], "Escape", lazy.group["scratchpad"].hide_all()),
 ])
 
 # --- Borders for layouts ---
@@ -95,7 +104,8 @@ layouts = [
     layout.MonadThreeCol(**layout_conf),
     layout.Bsp(**layout_conf),
     layout.RatioTile(**layout_conf),
-    layout.Spiral(**layout_conf)
+    layout.Spiral(**layout_conf),
+    layout.Floating(**layout_conf)
 ]
 
 # --- Widget Settings --- #
@@ -152,7 +162,6 @@ screens = [
                 widget.Memory(
                     format='  {MemUsed: .0f}{mm}',
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('kitty' + ' -e htop')}
-
                 ),
                 separator(),
                 widget.Volume(
@@ -192,8 +201,9 @@ bring_front_click = False
 floats_kept_above = True
 cursor_warp = True
 floating_layout = layout.Floating(
-    border_width=0,
-    border_focus=current_theme.get("active"),
+    border_width=2,
+    border_focus=current_theme.get("active"), 
+    border_normal=current_theme.get("active"),
     float_rules=[
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),
