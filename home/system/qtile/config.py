@@ -14,7 +14,8 @@ keys = [
     Key([mod], "Return", lazy.spawn('ghostty'), desc="Launch terminal"),
     Key([mod], "Space", lazy.spawn('rofi -show drun'), desc="Launch app launcher (rofi)"),
     Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
-    Key([mod], "n", lazy.spawn('thunar'), desc="Launch file explorer"),
+    Key([mod], "n", lazy.spawn('ghostty -e yazi'), desc="Launch Yazi"),
+    Key([mod], "h", lazy.spawn('thunar'), desc="Launch Thunar"),
     Key([mod], "j", lazy.spawn('dbus-run-session env _JAVA_AWT_WM_NONREPARENTING=1 bolt-launcher'), desc="Launch bolt launcher"),
     Key([mod], "m", lazy.spawn('youtube-music'), desc="Launch YouTube Music"),
     Key([mod], "s", lazy.spawn('steam'), desc="Launch steam"),
@@ -41,7 +42,7 @@ keys = [
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
     Key([mod], "period", lazy.next_layout(), desc="Switch to next layout"),
     Key([mod], "comma", lazy.prev_layout(), desc="Switch to previous layout"),
-    Key([mod, "shift"], "Space", toggle_floating_all(), desc="Toggle float/tile for all windows"),
+    Key([mod, "shift"], "Space", toggle_floating_all(), desc="Toggle float/tile for all windows"), 
     Key([mod], "f", float_all_windows(), desc="Set all windows to floating"),
     Key([mod], "t", tile_all_windows(), desc="Set all windows to tiled"),
 
@@ -157,12 +158,12 @@ screens = [
                     tag_sensor='Core 0',
                     format='   {temp:.0f}{unit}',
                     threshold=90.0,
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('kitty' + ' -e htop')}
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('ghostty' + ' -e htop')}
                 ),
                 separator(),
                 widget.Memory(
                     format='  {MemUsed: .0f}{mm}',
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('kitty' + ' -e htop')}
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('ghostty' + ' -e htop')}
                 ),
                 separator(),
                 widget.Volume(

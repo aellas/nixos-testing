@@ -4,5 +4,7 @@
     ./sddm.nix
     ./fish.nix
     ./starship.nix
+
+    ./niri.nix
   ];
 }
