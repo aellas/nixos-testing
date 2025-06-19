@@ -77,6 +77,7 @@ groups.append(ScratchPad("scratchpad", [
     DropDown("files", f"ghostty -e yazi", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
     DropDown("theme", f"bash /home/array/.config/qtile/scripts/switch_theme.sh", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
     DropDown("sound", f"pavucontrol", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
+    DropDown("vpn", f"protonvpn-app", width=0.8, height=0.8, x=0.1, y=0.1, opacity=1.0, on_focus_lost='hide'),
 ]))
 
 # --- Scratchpad Keybinds ---
@@ -86,11 +87,12 @@ keys.extend([
     Key([mod, "shift"], "t", lazy.group["scratchpad"].dropdown_toggle("theme")),
     Key([mod, "shift"], "n", lazy.group["scratchpad"].dropdown_toggle("files")),
     Key([mod, "shift"], "s", lazy.group["scratchpad"].dropdown_toggle("sound")),
-    Key([], "Escape", lazy.group["scratchpad"].hide_all()),
+    Key([mod, "shift"], "p", lazy.group["scratchpad"].dropdown_toggle("vpn")),
+    Key([mod], "x", lazy.group["scratchpad"].hide_all()),
 ])
 
 # --- Borders for layouts ---
-layout_conf = {
+layout_conf = { 
     'border_focus': current_theme.get("active"),
     'border_normal': current_theme.get("inactive"),
     'border_width': 2,
@@ -105,7 +107,6 @@ layouts = [
     layout.Bsp(**layout_conf),
     layout.RatioTile(**layout_conf),
     layout.Spiral(**layout_conf),
-    layout.Floating(**layout_conf)
 ]
 
 # --- Widget Settings --- #
@@ -213,6 +214,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),
         Match(title="pinentry"),
         Match(wm_class="feh"),
+        Match(wm_class="net-runelite-client-RuneLite")
     ]
 )
 

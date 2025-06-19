@@ -4,7 +4,9 @@
       github-desktop
       youtube-music
       vscodium
-      brave
       flameshot
+      nwg-look
+      imagemagick
+      protonvpn-gui
     ];
 }
