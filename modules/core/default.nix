@@ -2,7 +2,7 @@
   imports = [
     ./qtile.nix
     ./sddm.nix
-    ./zsh.nix
+    ./fish.nix
     ./starship.nix
   ];
 }
