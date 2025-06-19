@@ -12,7 +12,7 @@
     };
 
       logo = {
-        source = ./nixos.webp;
+        source = ./nixos.png;
         type = "kitty"; 
         padding = {
           top = 2;
