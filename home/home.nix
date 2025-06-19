@@ -2,10 +2,7 @@
 {
   home.username = "array";
   home.homeDirectory = "/home/array";
-  home.sessionVariables = {
-      EDITOR = "nvim"; 
-      VISUAL = "nvim"; 
-  };
+
   programs.home-manager.enable = true;
 
   imports = [
@@ -19,6 +16,8 @@
     ./apps/firefox.nix
     ./apps/rmpc.nix
     ./apps/yazi/default.nix
+    ./apps/lazygit.nix
+    ./apps/git.nix
 
     ./system/gtk.nix
     ./system/picom/picom.nix
