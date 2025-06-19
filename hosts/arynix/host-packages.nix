@@ -9,8 +9,6 @@
       nwg-look
       imagemagick
       nicotine-plus
-      protonvpn-gui
-      musikcube
   ];
 
   nixpkgs.overlays = [
